@@ -316,7 +316,7 @@ func (c *chatStreamConverter) ensureStarted() error {
 	return c.out.event("message_start", map[string]any{
 		"type": "message_start",
 		"message": map[string]any{
-			"id": "msg_codexproxy", "type": "message", "role": "assistant", "model": c.model,
+			"id": newMessageID(), "type": "message", "role": "assistant", "model": c.model,
 			"content": []any{}, "stop_reason": nil, "stop_sequence": nil,
 			"usage": map[string]any{"input_tokens": 0, "output_tokens": 0},
 		},
